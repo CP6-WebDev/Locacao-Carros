@@ -1,11 +1,28 @@
+import { useState } from "react";
+
 function Card({ carro }) {
+  const [imagemQuebrada, setImagemQuebrada] = useState(false);
+
+  const precoFormatado = carro.preco.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    maximumFractionDigits: 0,
+  });
+
   return (
     <article className="overflow-hidden rounded-lg border border-asfalto/10 bg-white">
-      <img
-        src={carro.imagem}
-        alt={`${carro.marca} ${carro.modelo}`}
-        className="h-48 w-full object-cover"
-      />
+      {imagemQuebrada ? (
+        <div className="flex h-48 items-center justify-center bg-corrida font-display text-2xl text-pedra">
+          {carro.marca}
+        </div>
+      ) : (
+        <img
+          src={carro.imagem}
+          alt={`${carro.marca} ${carro.modelo}`}
+          onError={() => setImagemQuebrada(true)}
+          className="h-48 w-full object-cover"
+        />
+      )}
 
       <div className="p-5">
         <p className="text-sm text-asfalto/60">{carro.marca}</p>
@@ -17,7 +34,7 @@ function Card({ carro }) {
         <div className="mt-5 flex items-center justify-between">
           <p>
             <span className="text-lg font-bold text-corrida">
-              {carro.preco}
+              {precoFormatado}
             </span>
             <span className="text-sm text-asfalto/60"> /dia</span>
           </p>
