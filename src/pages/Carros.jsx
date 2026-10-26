@@ -4,8 +4,13 @@ import { carros } from "../data/carros";
 
 function Carros() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-4xl font-bold">Nossos carros</h1>
+    <section
+      className="mx-auto max-w-6xl px-6 py-16"
+      aria-labelledby="carros-title"
+    >
+      <h1 id="carros-title" className="text-4xl font-bold">
+        Nossos carros
+      </h1>
 
       <p className="mt-3 max-w-xl text-asfalto/70">
         Todos os modelos são importados, revisados e entregues com seguro
