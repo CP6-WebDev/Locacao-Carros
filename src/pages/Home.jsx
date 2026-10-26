@@ -8,9 +8,15 @@ function Home() {
 
   return (
     <>
-      <section className="bg-corrida text-pedra">
+      <section
+        className="bg-corrida text-pedra"
+        aria-labelledby="hero-title"
+      >
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <h1 className="max-w-2xl text-4xl font-bold leading-tight sm:text-6xl">
+          <h1
+            id="hero-title"
+            className="max-w-2xl text-4xl font-bold leading-tight sm:text-6xl"
+          >
             Dirija o carro que você só via na estrada.
           </h1>
 
@@ -28,9 +34,14 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section
+        className="mx-auto max-w-6xl px-6 py-16"
+        aria-labelledby="destaques-title"
+      >
         <div className="flex items-end justify-between">
-          <h2 className="text-3xl font-bold">Em destaque</h2>
+          <h2 id="destaques-title" className="text-3xl font-bold">
+            Em destaque
+          </h2>
 
           <Link
             to="/carros"
