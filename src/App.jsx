@@ -11,7 +11,7 @@ const App = () => {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/carros" element={<Carros />} />
+            <Route path="/carros" element={<Carros />} /> 
           </Routes>
         </main>
       </div>
